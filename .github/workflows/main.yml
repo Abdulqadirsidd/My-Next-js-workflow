@@ -1,4 +1,4 @@
-name: Next-Js continous
+name: Next.Js continous Integration
 
 on: 
   push: 
