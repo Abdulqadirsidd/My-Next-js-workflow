@@ -9,10 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    defaults:
-      run:
-        working-directories: next-js
 
     defaults:
       run:
