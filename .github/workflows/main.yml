@@ -1,6 +1,6 @@
 name: Next.Js continous Integration
 
-on: 
+on:
   push: 
     branches: [ main ]
   pull_request:
