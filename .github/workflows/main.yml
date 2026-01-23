@@ -1,4 +1,4 @@
-name: Next.Js continous Integration
+name: Next.Js CI
 
 on:
   push: 
@@ -9,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: next-js
 
     steps:
       - name: Checkout code
