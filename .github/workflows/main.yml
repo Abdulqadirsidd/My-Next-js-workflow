@@ -26,3 +26,11 @@ jobs:
       - name: Build app
         working-directory: next-js
         run: npm run build
+
+      - name: Debug folders
+        run: ls -R
+
+      - name: Install dependencies
+        run: npm install
+  
+ 
