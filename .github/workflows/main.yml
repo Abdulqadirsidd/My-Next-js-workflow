@@ -2,16 +2,16 @@ name: Next.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -23,6 +23,6 @@ jobs:
         working-directory: next-js
         run: npm install
 
-      - name: Build Next.js app
+      - name: Build app
         working-directory: next-js
         run: npm run build
