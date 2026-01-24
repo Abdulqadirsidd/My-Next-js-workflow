@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Debug folder structure 
+      - name: Debug folders
         run: 
           pwd
           ls 
@@ -30,7 +30,7 @@ jobs:
           cd next-js
           npm install
         
-      - name: Build appl
+      - name: Build app
         run: 
           cd next-js
           npm run build
