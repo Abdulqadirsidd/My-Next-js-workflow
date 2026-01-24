@@ -1,31 +1,29 @@
-name: Next.js CI
+name: Debug Repo Structure
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
-  build:
+  debug:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Verify repo contents
+      - name: Show current path
+        run: pwd
+
+      - name: List repo root
+        run: ls -la
+
+      - name: List next-js folder
         run: |
-          pwd
-          ls
-          ls next-js
+          echo "---- next-js ----"
+          ls -la next-js || echo "next-js folder NOT FOUND"
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install --prefix next-js
-
-      - name: Build Next.js app
-        run: npm run build --prefix next-js
+      - name: Recursive tree
+        run: |
+          echo "---- TREE ----"
+          find . -maxdepth 3 -type f
